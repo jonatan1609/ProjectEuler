@@ -64,7 +64,23 @@ def largest_palindrome_product(n: int) -> int:
             if str(x) == str(x)[::-1]:
                 return x
 
+
+def smallest_multiple(upto: int) -> int:
+    """Problem 5.
+
+
+    2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    """
+    numbers = [11, 13, 14, 16, 17, 18, 19, 20]
+    for n in range(upto, 10 ** upto - 1, upto):
+        print(n)
+        if all(not n % x for x in numbers):
+            return n
+
+
 #print(multiples_of_3_and_5(3, 5, 1000))
 #print(even_fibonacci_numbers(4_000_000))
 #print(largest_prime_factor(600851475143))
 #print(largest_palindrome_product(3))
+#print(smallest_multiple(20))
