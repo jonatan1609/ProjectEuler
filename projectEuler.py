@@ -94,9 +94,37 @@ def sum_square_difference(n: int) -> int:
     square_of_sum = reduce(add, range(1, n + 1)) ** 2
     return square_of_sum - sum_of_square
 
+
+def _10001st_prime(n: int) -> int:
+    """Problem 7.
+
+
+    By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+    What is the 10 001st prime number?
+    """
+
+    def is_prime(n):
+        if n < 2:
+            return
+        for i in range(2, int(n ** 0.5) + 1):
+            if not n % i:
+                return
+        return True
+
+    primes = 0
+    prime = 1
+
+    while primes < n:
+        prime += 1
+        if is_prime(prime):
+            primes += 1
+    return prime
+
+
 #print(multiples_of_3_and_5(3, 5, 1000))
 #print(even_fibonacci_numbers(4_000_000))
 #print(largest_prime_factor(600851475143))
 #print(largest_palindrome_product(3))
 #print(smallest_multiple(20))
 #print(sum_square_difference(100))
+#print(_10001st_prime(10001))
