@@ -121,7 +121,7 @@ def _10001st_prime(n: int) -> int:
     return prime
 
 
-def largest_product_in_series(n):
+def largest_product_in_series(n: int) -> int:
     """Problem 8.
 
 
