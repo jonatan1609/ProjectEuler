@@ -74,7 +74,6 @@ def smallest_multiple(upto: int) -> int:
     """
     numbers = [11, 13, 14, 16, 17, 18, 19, 20]
     for n in range(upto, 10 ** upto - 1, upto):
-        print(n)
         if all(not n % x for x in numbers):
             return n
 
@@ -183,6 +182,17 @@ def largest_product_in_series(n: int) -> int:
             max_product = n_product
     return max_product
 
+
+def special_pythagorean_triplet(n: int) -> int:
+    """Problem 9.
+
+
+    A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+    a^2 + b^2 = c^2
+    For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+    There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+    Find the product abc.
+    """
 
 #print(multiples_of_3_and_5(3, 5, 1000))
 #print(even_fibonacci_numbers(4_000_000))
