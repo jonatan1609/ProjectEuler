@@ -79,8 +79,24 @@ def smallest_multiple(upto: int) -> int:
             return n
 
 
+def sum_square_difference(n: int) -> int:
+    """Problem 6.
+    The sum of the squares of the first ten natural numbers is 1^2+2^2+...+10^2=385,
+    The square of the sum of the first ten natural numbers is (1+2+...+10)^2=55^2=3025,
+    Hence the difference between the sum of the squares of the first ten
+    natural numbers and the square of the sum is 3025-385=2640.
+    Find the difference between the sum of the squares of the first one hundred
+    natural numbers and the square of the sum.
+    """
+    from functools import reduce
+    from operator import add
+    sum_of_square = sum(x ** 2 for x in range(1, n + 1))
+    square_of_sum = reduce(add, range(1, n + 1)) ** 2
+    return square_of_sum - sum_of_square
+
 #print(multiples_of_3_and_5(3, 5, 1000))
 #print(even_fibonacci_numbers(4_000_000))
 #print(largest_prime_factor(600851475143))
 #print(largest_palindrome_product(3))
 #print(smallest_multiple(20))
+#print(sum_square_difference(100))
