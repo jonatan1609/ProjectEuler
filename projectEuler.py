@@ -203,12 +203,23 @@ def special_pythagorean_triplet(n: int) -> tuple:
                 if a + b + c == n and a ** 2 + b ** 2 == c ** 2:
                     return a, b, c
 
+
+def summation_of_primes(n: int) -> int:
+    """Problem 10.
+
+
+    The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+    Find the sum of all the primes below two million.
+    """
+    return sum(x for x in range(2, n + 1) if not n % x)
+
 # print(multiples_of_3_and_5(3, 5, 1000))
-# print(even_fibonacci_numbers(4_000_000))
+# print(even_fibonacci_numbers(int(4e6)))
 # print(largest_prime_factor(600851475143))
 # print(largest_palindrome_product(3))
 # print(smallest_multiple(20))
 # print(sum_square_difference(100))
 # print(_10001st_prime(10001))
 # print(largest_product_in_series(14))
-#print(special_pythagorean_triplet(1000))
+# print(special_pythagorean_triplet(1000))
+# print(summation_of_primes(int(2e6)))
