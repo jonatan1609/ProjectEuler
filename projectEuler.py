@@ -187,7 +187,7 @@ def largest_product_in_series(n: int) -> int:
     return max_product
 
 
-def special_pythagorean_triplet(n: int) -> int:
+def special_pythagorean_triplet(n: int) -> tuple:
     """Problem 9.
 
 
@@ -197,6 +197,11 @@ def special_pythagorean_triplet(n: int) -> int:
     There exists exactly one Pythagorean triplet for which a + b + c = 1000.
     Find the product abc.
     """
+    for a in range(n):
+        for b in range(1, n):
+            for c in range(b, n - b):
+                if a + b + c == n and a ** 2 + b ** 2 == c ** 2:
+                    return a, b, c
 
 # print(multiples_of_3_and_5(3, 5, 1000))
 # print(even_fibonacci_numbers(4_000_000))
@@ -206,3 +211,4 @@ def special_pythagorean_triplet(n: int) -> int:
 # print(sum_square_difference(100))
 # print(_10001st_prime(10001))
 # print(largest_product_in_series(14))
+#print(special_pythagorean_triplet(1000))
